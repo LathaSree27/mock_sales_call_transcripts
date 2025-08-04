@@ -21,13 +21,24 @@ A Python-based application for simulating and practicing sales calls with AI-pow
 
 2. Create and activate a virtual environment (recommended):
    ```bash
-   python -m venv .venv
-   source .venv/bin/activate  # On Windows use: .venv\Scripts\activate
+   install conda
+   conda create --name myenv python=3.10
+   conda activate minienv   
    ```
 
-3. Install dependencies:
+3. Install dependencies (for openai):
    ```bash
    pip install -r requirements.txt
+   ```
+4. Export Path Variables (for openai):
+   ```bash
+   export OPENAI_API_KEY='your-api-key-here'  # not needed for Ollama
+   ```
+5. install Tools for Running LLMs:
+   ```bash
+   brew install ollama #mocOS
+   ollama pull mistral       
+   ollama pull zephyr       
    ```
 
 ## Usage
