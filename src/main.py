@@ -3,38 +3,29 @@ Mock Sales Call Application
 
 This module provides a simple command-line interface for simulating sales calls.
 """
+import subprocess
+from typing import Optional
 
-def main():
-    """Main entry point for the Mock Sales Call application."""
-    print("Welcome to Mock Sales Call!")
-    print("-" * 30)
-    
-    # Basic user interaction
-    name = input("Please enter your name: ")
-    print(f"\nHello, {name}! Let's get started with your mock sales call.")
-    
-    # Simple conversation flow
-    print("\n[System] The call has started...")
-    print("[System] Type 'exit' to end the call at any time.")
-    
-    while True:
-        user_input = input("\nYou: ").strip().lower()
-        
-        if user_input == 'exit':
-            print("\n[System] Ending the call. Goodbye!")
-            break
-            
-        # Simple response logic (to be replaced with AI integration)
-        if any(greeting in user_input for greeting in ['hi', 'hello', 'hey']):
-            print("AI: Hello! How can I assist you with our product today?")
-        elif 'price' in user_input:
-            print("AI: Our pricing starts at $99/month for the basic plan.")
-        elif 'feature' in user_input:
-            print("AI: Our product includes features like AI-powered analytics, real-time reporting, and 24/7 support.")
-        elif 'demo' in user_input:
-            print("AI: I'd be happy to schedule a demo for you. When would be a good time?")
-        else:
-            print("AI: I'm here to help you learn more about our product. Could you tell me what interests you the most?")
+
+class OllamaExecutor:
+    def __init__(self, default_model: str = 'mistral'):
+        self.default_model = default_model
+
+    def run(self, prompt: str, model: Optional[str] = None) -> str:
+        model_to_use = model or self.default_model
+        try:
+            cmd = f'ollama run {model_to_use} "{prompt}"'
+            result = subprocess.run(cmd,
+                                    shell=True,
+                                    check=True,
+                                    stdout=subprocess.PIPE,
+                                    stderr=subprocess.PIPE,
+                                    text=True)
+            return result.stdout.strip()
+        except subprocess.CalledProcessError as e:
+            print(f"Error running model: {e.stderr}")
+            raise
 
 if __name__ == "__main__":
-    main()
+    executor = OllamaExecutor()
+    print(executor.run("Tell me a joke"), flush=True)
