@@ -1,0 +1,24 @@
+[
+  {
+    "type": "generate",
+    "timestamp": "2025-08-04T20:09:26.065365",
+    "filename": "transcript_20250804_200926.txt",
+    "duration": 5,
+    "language": "en"
+  },
+  {
+    "type": "summarize",
+    "timestamp": "2025-08-04T20:19:19.084393",
+    "filename": "transcript_20250804_200926.txt",
+    "model": "zephyr",
+    "summary": "During the sales call between Sales Rep from TechCorp and potential customer John Doe, the Sales Rep introduced their new cloud-based software solution that could improve John's business operations. John was initially hesitant as he felt his current system was sufficient, but the Sales Rep explained the benefits of real-time analytics and automation features. John raised concerns about the learning curve for new software, but the Sales Rep assured him of comprehensive training and support throughout the transition process, and a user-friendly interface. John expressed interest in exploring the solution further and requested a product specialist to give him a live demonstration next week, while the Sales Rep promised to send detailed information and case studies. The call ended on a positive note, with both parties looking forward to continued communication."
+  },
+  {
+    "type": "question",
+    "timestamp": "2025-08-04T20:20:18.601468",
+    "filename": "transcript_20250804_200926.txt",
+    "question": "Is the problem resolved",
+    "model": "zephyr",
+    "answer": "Based on the sales call transcript, it is clear that John's concern about the learning curve for new software has been addressed by TechCorp's comprehensive training and user-friendly interface. The Sales Rep from TechCorp has agreed to set up a demo and provide more information, indicating that the problem of John's hesitation to change his current system may be resolved through these efforts. However, it is ultimately up to John to decide whether or not he wants to proceed with implementing TechCorp's software solution after receiving additional information and experiencing the demo."
+  }
+]
