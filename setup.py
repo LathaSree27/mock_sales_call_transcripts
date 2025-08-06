@@ -11,7 +11,7 @@ setup(
     description="A mock sales call simulation tool",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/yourusername/mock-sales-call",
+    url="https://github.com/LathaSree27/mock_sales_call_transcripts",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     python_requires=">=3.8",

@@ -69,3 +69,25 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Contact
 For any questions or feedback, please open an issue in the repository.
+
+
+## Code Structure
+1. Implemented OllamaExecutor Class which can be used to run LLMs
+2. Implemented TranscriptGenerator Class which can be used to generate sales call transcripts. It has the property of executing LLMs and methods to generate, summarize and answer questions
+3. Implemented SalesManager Class which can be used to manage sales calls
+4. Implemented FileHandler Class which can be used to handle file operations. It has methods to save and load files by taking a filename and load history.
+5. Implemented CommandHandler Class which can be used to handle user commands with sales manager as a parameter
+5. Implemented main.py which can be used to run the application
+
+
+## How to use the application
+1. python3 -m src.main generate -d 10 -o output.txt -l en -m mistral 
+2. python3 src.main summarize output.txt -m zephyr 
+3. python3 -m src.main question output.txt "What was the customer's main concern?" -m zephyr
+
+
+-d denoted suration of call duration in minutes
+-o denoted output file name
+-l denoted language of transcript
+-m denoted model to use
+
